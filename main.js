@@ -53,7 +53,7 @@ function Paddle(x,isuser){
     }
 //cpu
     if(this.isuser=='false'){
-      this.y=ball.y-.5*paddlelength;
+      this.y=ball.y + ball.dy -.5*paddlelength;
     }
 
     this.draw();
@@ -122,7 +122,7 @@ function init(){
   paddlev = paddlelength/8;
   paddleArray = [];
   radius = (innerWidth*innerHeight)/85000;
-  ball = new Ball(velocity, randnum(innerHeight/25 + 30));
+  ball = new Ball(velocity, randnum(innerHeight/25));
   paddleArray.push(new Paddle(1,'true'));
   paddleArray.push(new Paddle(innerWidth-paddlewidth-1,'false'));
 
