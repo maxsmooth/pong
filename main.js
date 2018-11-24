@@ -113,7 +113,7 @@ function randnum(high){
 function init(){
   score=0;
   isuser=undefined;
-  velocity = innerWidth/100;
+  velocity = innerWidth/180;
   ballArray=[];
   paddlelength = innerHeight/6;
   paddlewidth=innerWidth/150;
