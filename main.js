@@ -34,9 +34,6 @@ let paddleArray = [];
 let radius = (innerWidth*innerHeight)/85000;
 let isuser;
 let score;
-function steps(){
-  return (innerWidth-ball.x)/ball.dx;
-}
 function Paddle(x,isuser){
   this.isuser = isuser;
   this.x=x;
@@ -86,16 +83,16 @@ function Ball(dx,dy){
         this.dx = -this.dx;
         score += 1;
       }else{
-        alert("You score was: " + score);
         init();
       }
     }
+    //horizontally right
     if(ball.dx>0){
       if (ball.x - radius + ball.dx > 0+paddlewidth+1 && ball.x + radius + ball.dx < innerWidth-paddlewidth-1){
         this.x += this.dx;
 
       }else if(ball.y + ball.dy  > paddleArray[1].y && ball.y + ball.dy < paddleArray[1].y+paddlelength){
-        this.dx = -this.dx;
+        this.dx = -newdy();
       }else{
         init();
       }
@@ -122,15 +119,15 @@ function init(){
   paddlev = paddlelength/8;
   paddleArray = [];
   radius = (innerWidth*innerHeight)/85000;
-  ball = new Ball(velocity, randnum(innerHeight/25));
+  ball = new Ball(velocity, newdy() );
   paddleArray.push(new Paddle(1,'true'));
   paddleArray.push(new Paddle(innerWidth-paddlewidth-1,'false'));
 
 }
-
-function negorpos(){
-  return Math.round(Math.random())*2-1;
+function newdy(){
+  return randnum(innerHeight/25);
 }
+
 //Animation Loop
 function animate(){
   requestAnimationFrame(animate);
