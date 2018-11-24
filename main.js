@@ -117,7 +117,7 @@ function init(){
   ballArray=[];
   paddlelength = innerHeight/6;
   paddlewidth=innerWidth/150;
-  paddlev = paddlelength/8;
+  paddlev = paddlelength/6;
   paddleArray = [];
   radius = (innerWidth*innerHeight)/85000;
   ball = new Ball(velocity, newdy() );
