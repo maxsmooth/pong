@@ -115,7 +115,7 @@ function randnum(high){
 function init(){
   score=0;
   isuser=undefined;
-  velocity = innerWidth/50;
+  velocity = innerWidth/100;
   ballArray=[];
   paddlelength = innerHeight/6;
   paddlewidth=innerWidth/150;
