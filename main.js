@@ -92,7 +92,8 @@ function Ball(dx,dy){
         this.x += this.dx;
 
       }else if(ball.y + ball.dy  > paddleArray[1].y && ball.y + ball.dy < paddleArray[1].y+paddlelength){
-        this.dx = -newdy();
+        this.dx = -this.dx;
+        this.dy = newdy();
       }else{
         init();
       }
