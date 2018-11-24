@@ -79,10 +79,12 @@ function Ball(dx,dy){
       if (ball.x - radius + ball.dx > 0+paddlewidth+1 && ball.x + radius + ball.dx < innerWidth-paddlewidth-1){
         this.x += this.dx;
 //colision of user paddle
-      }else if(ball.y > paddleArray[0].y && ball.y < paddleArray[0].y+paddlelength){
+      }else if(ball.y + ball.dy >= paddleArray[0].y && ball.y + ball.dy <= paddleArray[0].y+paddlelength){
         this.dx = -this.dx;
         score += 1;
       }else{
+        this.x += this.dx;
+        this.draw();
         init();
       }
     }
