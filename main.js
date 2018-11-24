@@ -117,7 +117,7 @@ function init(){
   isuser=undefined;
   velocity = innerWidth/180;
   ballArray=[];
-  paddlelength = innerHeight/6;
+  paddlelength = innerHeight/5;
   paddlewidth=innerWidth/150;
   paddlev = paddlelength/6;
   paddleArray = [];
