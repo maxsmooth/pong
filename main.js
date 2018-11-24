@@ -140,7 +140,7 @@ function animate(){
   for(let i=0; i<paddleArray.length; i++){
     paddleArray[i].update();
   }
-  c.font = "60px Arial";
+  c.font = "200px Arial";
   c.strokeText(score, innerWidth/2, innerHeight/2);
 }
 init();
