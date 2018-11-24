@@ -138,7 +138,8 @@ function animate(){
   for(let i=0; i<paddleArray.length; i++){
     paddleArray[i].update();
   }
-
+  c.font = "30px Arial";
+  c.strokeText(ball.dx, innerWidth/2, innerHeight/2);
 }
 init();
 animate();
