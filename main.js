@@ -128,7 +128,7 @@ function init(){
 
 }
 function newdy(){
-  return randnum(innerHeight/55);
+  return randnum(innerHeight/150 + 5);
 }
 
 //Animation Loop
