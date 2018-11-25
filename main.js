@@ -121,7 +121,7 @@ function init(){
   paddlewidth=innerWidth/150;
   paddlev = paddlelength/7.5;
   paddleArray = [];
-  radius = (innerWidth*innerHeight)/100000;
+  radius = (innerWidth*innerHeight)/200000;
   ball = new Ball(velocity, newdy() );
   paddleArray.push(new Paddle(1,'true'));
   paddleArray.push(new Paddle(innerWidth-paddlewidth-1,'false'));
