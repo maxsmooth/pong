@@ -117,11 +117,11 @@ function init(){
   isuser=undefined;
   velocity = innerWidth/180;
   ballArray=[];
-  paddlelength = innerHeight/5;
+  paddlelength = innerHeight/7;
   paddlewidth=innerWidth/150;
   paddlev = paddlelength/7.5;
   paddleArray = [];
-  radius = (innerWidth*innerHeight)/85000;
+  radius = (innerWidth*innerHeight)/100000;
   ball = new Ball(velocity, newdy() );
   paddleArray.push(new Paddle(1,'true'));
   paddleArray.push(new Paddle(innerWidth-paddlewidth-1,'false'));
