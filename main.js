@@ -112,6 +112,7 @@ function Ball(dx,dy){
     c.beginPath();
     c.moveTo(ball.x,ball.y);
     c.lineTo(((stepstobounce*ball.dx)+ball.x), (stepstobounce*ball.dy)+ball.y);
+    c.strokeStyle = 'Red';
     c.stroke();
     this.draw();
   }
