@@ -24,7 +24,8 @@ document.addEventListener('keyup', ()=>{
   key = undefined;
 })
 //variables
-
+let stepstoend;
+let stepstobounce;
 let velocity = 1;
 let ball;
 let paddlelength = innerHeight/6;
@@ -100,6 +101,18 @@ function Ball(dx,dy){
         init();
       }
     }
+    
+    //stpestoend
+    stepstoend = ball.x/this.dx;
+    if (ball.dy < 0){
+      stepstobounce = ball.y;
+    }else if (ball.dy >0){
+       stepstobounce = innerHeight-ball.y;
+    }
+    c.beginPath();
+    c.moveTo(ball.x,ball.y);
+    c.lineTo(((stepstobounce*ball.dx)+ball.x), (stepstobounce*ball.dy)+ball.y);
+    c.stroke();
     this.draw();
   }
   this.draw = function(){
