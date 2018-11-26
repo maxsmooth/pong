@@ -36,6 +36,38 @@ let paddleArray = [];
 let radius = (innerWidth*innerHeight)/85000;
 let isuser;
 let score;
+
+function Line(){
+ //stpestoend
+   function lineTox(){
+      return stepstobounce()*ball.dx + ball.x; 
+    }
+    function lineToy(){
+      return stepstobounce()*ball.dy + ball.y;
+    }
+    function stepstoend(){
+      return ball.x/this.dx;
+    }
+   function stepstobounce(){
+    if (ball.dy < 0){
+      return ball.y;
+    }else if (ball.dy >0){
+       return innerHeight-ball.y;
+    }
+   }
+    this.draw = function drawline(){ 
+      c.beginPath();
+      c.moveTo(ball.x,ball.y);
+      c.lineTo(lineTox(),lineToy());
+      c.strokeStyle = 'Red';
+      c.stroke();
+    }
+    this.update() = function{
+      this.draw();
+    }
+}
+
+
 function Paddle(x,isuser){
   this.isuser = isuser;
   this.x=x;
@@ -103,31 +135,7 @@ function Ball(dx,dy){
       }
     }
     
-    //stpestoend
-    function lineTox(){
-      return stepstobounce()*ball.dx + ball.x; 
-    }
-    function lineToy(){
-      return stepstobounce()*ball.dy + ball.y;
-    }
-    function stepstoend(){
-      return ball.x/this.dx;
-    }
-   function stepstobounce(){
-    if (ball.dy < 0){
-      return ball.y;
-    }else if (ball.dy >0){
-       return innerHeight-ball.y;
-    }
-   }
-    function drawline(){ 
-      c.beginPath();
-      c.moveTo(ball.x,ball.y);
-      c.lineTo(lineTox(),lineToy());
-      c.strokeStyle = 'Red';
-      c.stroke();
-    }
-    drawline();
+   
     this.draw();
   }
   this.draw = function(){
