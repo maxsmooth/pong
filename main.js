@@ -141,7 +141,7 @@ function animate(){
     paddleArray[i].update();
   }
   c.font = "200px Arial";
-  c.strokeText(score, innerWidth/2, innerHeight/2);
+  c.strokeText(score, -200 + innerWidth/2, innerHeight/2);
 }
 init();
 animate();
