@@ -24,6 +24,7 @@ document.addEventListener('keyup', ()=>{
   key = undefined;
 })
 //variables
+let lines = [];
 let stepstoend;
 let stepstobounce;
 let velocity = 1;
@@ -103,17 +104,23 @@ function Ball(dx,dy){
     }
     
     //stpestoend
-    stepstoend = ball.x/this.dx;
-    if (ball.dy < 0){
-      stepstobounce = ball.y;
-    }else if (ball.dy >0){
-       stepstobounce = innerHeight-ball.y;
+    function stepstoend(){
+      return ball.x/this.dx;
     }
-    c.beginPath();
-    c.moveTo(ball.x,ball.y);
-    c.lineTo(((stepstobounce*ball.dx)+ball.x), (stepstobounce*ball.dy)+ball.y);
-    c.strokeStyle = 'Red';
-    c.stroke();
+   function stepstobounce(){
+    if (ball.dy < 0){
+      return ball.y;
+    }else if (ball.dy >0){
+       return innerHeight-ball.y;
+    }
+   }
+    function drawline(){ 
+      c.beginPath();
+      c.moveTo(ball.x,ball.y);
+      c.lineTo(((stepstobounce()*ball.dx)+ball.x), (stepstobounce()*ball.dy)+ball.y);
+      c.strokeStyle = 'Red';
+      c.stroke();
+    }
     this.draw();
   }
   this.draw = function(){
