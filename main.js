@@ -121,6 +121,7 @@ function Ball(dx,dy){
       c.strokeStyle = 'Red';
       c.stroke();
     }
+    drawline();
     this.draw();
   }
   this.draw = function(){
