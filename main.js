@@ -104,6 +104,12 @@ function Ball(dx,dy){
     }
     
     //stpestoend
+    function lineTox(){
+      return stepstobounce()*ball.dx + ball.x; 
+    }
+    function lineToy(){
+      return stepstobounce()*ball.dy + ball.y;
+    }
     function stepstoend(){
       return ball.x/this.dx;
     }
@@ -117,7 +123,7 @@ function Ball(dx,dy){
     function drawline(){ 
       c.beginPath();
       c.moveTo(ball.x,ball.y);
-      c.lineTo(((stepstobounce()*ball.dx)+ball.x), (stepstobounce()*ball.dy)+ball.y);
+      c.lineTo(lineTox(),lineToy());
       c.strokeStyle = 'Red';
       c.stroke();
     }
